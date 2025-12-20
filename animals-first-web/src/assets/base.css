@@ -1,0 +1,108 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+
+  --text: #111827;       /* gray-900 */
+  --muted: #6b7280;      /* gray-500 */
+
+  --border: #e5e7eb;     /* gray-200 */
+  --border-hover: #d1d5db; /* gray-300 */
+  --focus: #9ca3af;      /* gray-400 */
+
+  --btn: #111827;        /* near black */
+  --btn-hover: #0b1220;
+
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* PrimeVue input base */
+.p-inputtext,
+.p-password-input {
+  background: #ffffff !important;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  color: #000 !important;
+}
+
+.p-inputtext:hover,
+.p-password-input:hover {
+  border-color: var(--border-hover);
+}
+
+.p-inputtext:focus,
+.p-password-input:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.25);
+}
+
+/* PrimeVue invalid state (optional) */
+.p-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+
+
+/* Fundo geral da tabela */
+.p-datatable {
+  background: #ffffff;
+}
+
+/* Cabeçalho */
+.p-datatable-thead > tr > th {
+  background: #f9fafb !important;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Linhas do corpo */
+.p-datatable-tbody > tr {
+  background: #ffffff !important;
+  color: var(--text);
+}
+
+/* Linhas alternadas (stripedRows) */
+.p-datatable-tbody > tr:nth-child(even) {
+  background: #f8fafc !important; /* cinza MUITO claro */
+}
+
+/* Hover da linha */
+.p-datatable-tbody > tr:hover {
+  background: #f1f5f9 !important;
+}
+
+/* Células */
+.p-datatable-tbody > tr > td {
+  border-bottom: 1px solid var(--border);
+  background: transparent !important;
+}
+
+/* Estado vazio / loading */
+.p-datatable-empty-message,
+.p-datatable-loading-overlay {
+  background: #ffffff;
+  color: var(--muted);
+}
+
+.p-datatable-tbody > tr {
+  color: #000 !important;
+}
+
+textarea{
+  background-color: #fff !important;
+}
+.p-select .p-checkbox-input{
+  background-color: #fff;
+}
