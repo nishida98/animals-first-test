@@ -6,6 +6,7 @@ import AppLayout from '../layouts/AppLayout.vue'
 import PetsListView from '../views/pets/PetsListView.vue'
 import PetEditView from '../views/pets/PetEditView.vue'
 import PetAdoptView from '../views/pets/PetAdoptView.vue'
+import PetCreateView from '../views/pets/PetCreateView.vue'
 
 const routes = [
   { path: '/login', name: 'login', component: LoginView, meta: { public: true } },
@@ -18,10 +19,12 @@ const routes = [
     children: [
       { path: '', redirect: '/pets' },
       { path: 'pets', name: 'pets.list', component: PetsListView },
+      { path: '/pets/new', name: 'pets.new', component: PetCreateView },
+      { path: '/pets/:id/edit', name: 'pets.edit', component: PetEditView },
+      { path: '/pets/:id/adopt', name: 'pets.adopt', component: PetAdoptView },
     ],
   },
-  { path: '/pets/:id/edit', name: 'pets.edit', component: PetEditView },
-  { path: '/pets/:id/adopt', name: 'pets.adopt', component: PetAdoptView },
+  { path: '/:pathMatch(.*)*', redirect: '/pets' },
 
 ]
 

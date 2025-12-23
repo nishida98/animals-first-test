@@ -167,6 +167,7 @@ import InputNumber from 'primevue/inputnumber'
 import Textarea from 'primevue/textarea'
 import Checkbox from 'primevue/checkbox'
 import Button from 'primevue/button'
+import { adoptPet } from '../../services/pets'
 
 const route = useRoute()
 const router = useRouter()
@@ -268,13 +269,8 @@ async function onSubmit() {
 
   loading.value = true
   try {
-    // Suggested endpoint (adjust to your backend):
-    // POST /api/pets/:id/adoptions
-    await http.post(`/pets/${petId.value}/adoptions`, {
-      ...form,
-      state: form.state,
-    })
-
+    
+    await adoptPet(petId.value, form)
     toast.add({ severity: 'success', summary: 'Submitted', detail: 'Adoption application submitted.', life: 3500 })
     router.push('/pets')
   } catch (e) {

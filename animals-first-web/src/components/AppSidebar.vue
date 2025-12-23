@@ -26,6 +26,12 @@ const items = computed(() => [
         icon: 'pi pi-list',
         command: () => router.push('/pets'),
       },
+      {
+        label: 'Create pet',
+        icon: 'pi pi-plus',
+        command: () => router.push('/pets/new'),
+      },
+
     ],
   },
 ])

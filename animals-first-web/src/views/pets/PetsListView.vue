@@ -1,9 +1,19 @@
 <template>
   <div class="page">
     <div class="page-header">
-      <h2 class="title">Pets</h2>
-      <p class="subtitle">List of registered pets</p>
+      <div class="header-left">
+        <h2 class="title">Pets</h2>
+        <p class="subtitle">List of registered pets</p>
+      </div>
+
+      <Button
+        label="Create pet"
+        icon="pi pi-plus"
+        class="btn-primary"
+        @click="goToCreate"
+      />
     </div>
+
 
     <div class="card">
       <DataTable
@@ -127,6 +137,9 @@ function onAdopt(pet) {
   router.push(`/pets/${pet.id}/adopt`)
 }
 
+function goToCreate() {
+  router.push('/pets/new')
+}
 
 function onEdit(pet) {
   // best practice: navigate to an edit route (we can create it next)
@@ -170,7 +183,29 @@ function confirmDelete(pet) {
 
 <style scoped>
 .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 14px;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-primary {
+  /* background: var(--btn); */
+  border: 1px solid var(--btn);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+  border-color: var(--btn-hover);
 }
 
 .title {
