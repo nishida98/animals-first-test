@@ -1,8 +1,10 @@
 <h1 style="text-align: center;">🐱 Animals First Mock 🐶</h1>
 
+Simple application that emulates what would be the experience of register a pet and fill the adoption form.
+
 ## About This Project
 
-Simple application that emulates what would be the experience of register a pet and fill the adoption form.
+This project has the goal to access my abilities with the following tech stack.
 
 ## Tech Stack
 
@@ -27,4 +29,4 @@ Simple application that emulates what would be the experience of register a pet 
 
 ## Inspired By
 
-[Animals First](https://animalsfirst.com/), a shelter and rescue software.
+[Animals First](https://animalsfirst.com/), a shelter and animal rescue software.
