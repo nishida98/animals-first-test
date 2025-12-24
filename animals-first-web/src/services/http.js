@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 
 export const http = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://animals-first-test-api.vercel.app/api',
   timeout: 20000,
 })
 
