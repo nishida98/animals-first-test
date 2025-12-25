@@ -2,6 +2,7 @@
   <header class="header">
     <div class="left">
       <Button
+        v-if="isMobile"
         class="icon-btn"
         icon="pi pi-bars"
         severity="secondary"
@@ -25,6 +26,9 @@ import { useAuthStore } from '../stores/auth';
 import Button from 'primevue/button'
 
 defineEmits(['toggleSidebar'])
+defineProps({
+  isMobile: { type: Boolean, default: false },
+})
 
 const auth = useAuthStore()
 
@@ -37,6 +41,10 @@ const displayName = computed(() => {
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
   height: 64px;
   background: #ffffff;
   border-bottom: 1px solid var(--border);
@@ -50,12 +58,14 @@ const displayName = computed(() => {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .brand {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .right {
@@ -63,6 +73,7 @@ const displayName = computed(() => {
   align-items: center;
   gap: 10px;
   color: var(--text);
+  min-width: 0;
 }
 
 .user-icon {
@@ -73,9 +84,17 @@ const displayName = computed(() => {
 .user-name {
   font-size: 0.95rem;
   color: var(--text);
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon-btn {
   border-radius: 10px;
+}
+
+@media (max-width: 420px) {
+  .user-name { max-width: 90px; }
 }
 </style>

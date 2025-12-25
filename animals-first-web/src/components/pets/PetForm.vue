@@ -142,12 +142,16 @@ function submit() {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr; 
   gap: 14px;
 }
 
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .field { display: flex; flex-direction: column; gap: 6px; }
@@ -165,4 +169,9 @@ label { font-size: 0.9rem; color: var(--muted); }
   border-radius: 10px;
 }
 .btn:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
+
+@media (max-width: 480px) {
+  .actions { flex-direction: column; }
+  .actions :deep(.p-button) { width: 100%; }
+}
 </style>

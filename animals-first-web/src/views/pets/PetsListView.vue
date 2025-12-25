@@ -238,4 +238,8 @@ function confirmDelete(pet) {
   justify-content: flex-start;
   align-items: center;
 }
+
+@media (max-width: 480px) {
+  .btn-primary { width: 100%; }
+}
 </style>
